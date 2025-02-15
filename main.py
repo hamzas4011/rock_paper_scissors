@@ -19,7 +19,7 @@ def get_winner(player, computer):
 def play_game():
     print("\n🎮 Welcome to Rock-Paper-Scissors!")
     print("This game has 5 rounds, and your score will be tracked.")
-    print("Press 'q' anytime to quit.\n")
+    print("Press 'q' and hit Enter anytime to quit.\n")
 
     rounds = 0
     player_score = 0
@@ -70,7 +70,6 @@ def play_game():
     else:
         print("🤝 It's a tie overall!")
 
-    # Ask if the player wants to restart
     while True:
         play_again = input("\n🔄 Do you want to play again? (yes/no): ").lower()
         if play_again == "yes":
