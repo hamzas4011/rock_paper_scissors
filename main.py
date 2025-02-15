@@ -19,7 +19,7 @@ def get_winner(player, computer):
 def play_game():
     print("\n🎮 Welcome to Rock-Paper-Scissors!")
     print("This game has 5 rounds, and your score will be tracked.")
-    print("Press 'q' and press Enter anytime to quit.\n")
+    print("Press 'q' and Enter anytime to quit.\n")
 
     rounds = 0
     player_score = 0
