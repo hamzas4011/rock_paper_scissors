@@ -16,29 +16,27 @@ def get_winner(player, computer):
         return "lose"
 
 
-def main():
-    print("🎮 Welcome to Rock-Paper-Scissors! 🎮")
-    print("Type 'quit' to exit the game.\n")
+def play_game():
+    print("\n🎮 Welcome to Rock-Paper-Scissors! 🎮")
+    print("This game has **5 rounds**, and your score will be tracked.")
+    print("You can **press 'q' at any time** to quit the game.\n")
 
     rounds = 0
     player_score = 0
     computer_score = 0
     ties = 0
+    max_rounds = 5
 
-    while True:
-        print(f"🔵 Round {rounds + 1} 🔵")
-        player_choice = input("Choose rock, paper, or scissors: ").lower()
+    while rounds < max_rounds:
+        print(f"🔵 Round {rounds + 1} of {max_rounds} 🔵")
+        player_choice = input("Choose rock, paper, or scissors (or press 'q' to quit): ").lower()
 
-        if player_choice == "quit":
-            print("\n📢 Final Score 📢")
-            print(f"✅ You: {player_score}")
-            print(f"🤖 Computer: {computer_score}")
-            print(f"⚖️ Ties: {ties}")
-            print("Thanks for playing! Goodbye. 👋")
-            break
+        if player_choice == "q":
+            print("\n🚪 Exiting game... Thanks for playing! 👋")
+            return
 
         if player_choice not in ["rock", "paper", "scissors"]:
-            print("❌ Invalid choice! Try again.\n")
+            print("❌ Invalid choice! Please choose 'rock', 'paper', or 'scissors'.\n")
             continue
 
         computer_choice = get_computer_choice()
@@ -58,9 +56,32 @@ def main():
 
         rounds += 1
         print(f"📊 Scoreboard: You {player_score} | Computer {computer_score} | Ties {ties}")
-        print("-" * 40)  # Separator for better readability
+        print("-" * 40)
+
+    print("\n🎯 Game Over! Here’s the final score:")
+    print(f"✅ You: {player_score}")
+    print(f"🤖 Computer: {computer_score}")
+    print(f"⚖️ Ties: {ties}")
+
+    if player_score > computer_score:
+        print("🏆 Congratulations! You won the game! 🎉")
+    elif player_score < computer_score:
+        print("😢 The computer wins! Better luck next time.")
+    else:
+        print("🤝 It's a tie overall!")
+
+    # Ask if the player wants to restart
+    while True:
+        play_again = input("\n🔄 Do you want to play again? (yes/no): ").lower()
+        if play_again == "yes":
+            play_game()
+            break
+        elif play_again == "no":
+            print("Thanks for playing! Goodbye. 👋")
+            break
+        else:
+            print("❌ Invalid choice! Please type 'yes' or 'no'.")
 
 
 if __name__ == "__main__":
-    main()
-
+    play_game()
