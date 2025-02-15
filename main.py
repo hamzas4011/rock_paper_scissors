@@ -17,9 +17,9 @@ def get_winner(player, computer):
 
 
 def play_game():
-    print("\n🎮 Welcome to Rock-Paper-Scissors! 🎮")
-    print("This game has **5 rounds**, and your score will be tracked.")
-    print("You can **press 'q' at any time** to quit the game.\n")
+    print("\n🎮 Welcome to Rock-Paper-Scissors!")
+    print("This game has 5 rounds, and your score will be tracked.")
+    print("Press 'q' anytime to quit.\n")
 
     rounds = 0
     player_score = 0
@@ -28,8 +28,8 @@ def play_game():
     max_rounds = 5
 
     while rounds < max_rounds:
-        print(f"🔵 Round {rounds + 1} of {max_rounds} 🔵")
-        player_choice = input("Choose rock, paper, or scissors (or press 'q' to quit): ").lower()
+        print(f"🔵 Round {rounds + 1} of {max_rounds}")
+        player_choice = input("Choose rock, paper, or scissors: ").lower()
 
         if player_choice == "q":
             print("\n🚪 Exiting game... Thanks for playing! 👋")
